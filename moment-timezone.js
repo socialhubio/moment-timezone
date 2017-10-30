@@ -24,6 +24,9 @@
 	// 	return moment;
 	// }
 
+	// Fix For Moment + Moment-Timezone In Webpack. Use Until PR https://github.com/moment/moment-timezone/pull/551 Is Merged.
+	moment = moment && moment.hasOwnProperty('default') ? moment['default'] : moment;
+
 	var VERSION = "0.5.13",
 		zones = {},
 		links = {},
